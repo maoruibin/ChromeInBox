@@ -110,6 +110,15 @@ document.addEventListener('DOMContentLoaded', function() {
     notesPanel.classList.remove('active');
   });
 
+  // 添加键盘快捷键发送功能
+  document.addEventListener('keydown', function(e) {
+    // 检查是否按下 Ctrl+Enter 或 Command+Enter
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault(); // 阻止默认行为
+      sendBtn.click(); // 触发发送按钮点击事件
+    }
+  });
+
   // 发送按钮点击事件
   sendBtn.addEventListener('click', function() {
     // 获取标题和内容
@@ -344,6 +353,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 发送笔记到 inBox
   function sendNote(tokenOrUrl, title, content) {
+    // 更新发送按钮状态
+    const sendText = sendBtn.querySelector('.send-text');
+    const sendStatus = document.querySelector('.send-status');
+    sendBtn.disabled = true;
+    sendText.textContent = '发送中...';
+    sendStatus.className = 'send-status';
+    
     // 判断是否是完整URL还是仅token
     const apiUrl = urlRegex.test(tokenOrUrl) ? tokenOrUrl : `https://app.gudong.site/api/inbox/${tokenOrUrl}`;
     
@@ -360,7 +376,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       if (data.code === 0) {
-        showMessage('笔记已成功发送到 inBox！', 'success');
+        // 发送成功
+        sendText.textContent = '发送';
+        sendStatus.textContent = data.msg || '发送成功';
+        sendStatus.className = 'send-status success';
         
         // 存储发送的笔记
         saveNote(title, content);
@@ -374,12 +393,36 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 更新笔记列表
         updateNotesList();
+        
+        // 3秒后恢复按钮状态
+        setTimeout(() => {
+          sendBtn.disabled = false;
+          sendStatus.className = 'send-status';
+        }, 3000);
       } else {
-        showMessage(`发送失败: ${data.msg}`, 'error');
+        // 发送失败
+        sendText.textContent = '发送';
+        sendStatus.textContent = `发送失败: ${data.msg}`;
+        sendStatus.className = 'send-status error';
+        
+        // 3秒后恢复按钮状态
+        setTimeout(() => {
+          sendBtn.disabled = false;
+          sendStatus.className = 'send-status';
+        }, 3000);
       }
     })
     .catch(error => {
-      showMessage(`发送错误: ${error.message}`, 'error');
+      // 发送错误
+      sendText.textContent = '发送';
+      sendStatus.textContent = `发送错误: ${error.message}`;
+      sendStatus.className = 'send-status error';
+      
+      // 3秒后恢复按钮状态
+      setTimeout(() => {
+        sendBtn.disabled = false;
+        sendStatus.className = 'send-status';
+      }, 3000);
     });
   }
 

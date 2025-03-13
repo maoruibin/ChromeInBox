@@ -13,10 +13,11 @@
 - 历史笔记记录
 - 历史标签管理
 - 支持自定义 API URL
+- 支持快捷键发送（Ctrl+Enter 或 Command+Enter）
 
 ## 安装方法
 
-### 方法一：从 Chrome 网上应用店安装（暂时未上架）
+### 方法一：从 Chrome 网上应用店安装（推荐）
 
 1. 访问 [Chrome 网上应用店](https://chrome.google.com/webstore/detail/inbox-notes/xxx)
 2. 点击"添加至 Chrome"按钮
@@ -42,7 +43,7 @@
    - 在标题框中输入笔记标题（可选）
    - 在内容框中输入笔记内容
    - 使用工具栏按钮添加标签、待办或列表
-   - 点击"发送"按钮
+   - 点击"发送"按钮或使用快捷键 Ctrl+Enter（Windows）/ Command+Enter（Mac）发送
 
 4. 查看历史笔记：
    - 点击"笔记列表"按钮
@@ -53,6 +54,10 @@
    - 点击"标签"按钮查看历史标签
    - 点击标签可以快速插入到编辑区
    - 使用"清空标签"按钮可以清除所有历史标签
+
+## 快捷键
+
+- `Ctrl+Enter`（Windows）或 `Command+Enter`（Mac）：快速发送笔记
 
 ## 注意事项
 
