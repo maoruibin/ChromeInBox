@@ -1,6 +1,7 @@
 # inBox 笔记 Chrome 扩展
 
 这是一个用于快速发送笔记到 inBox 的 Chrome 扩展。
+
 ![](./images/main.png)
 
 关于 inBox 笔记，可查看官网：[https://doc.gudong.site/inbox/](https://doc.gudong.site/inbox/)
