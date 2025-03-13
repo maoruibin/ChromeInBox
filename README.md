@@ -2,7 +2,7 @@
 
 这是一个用于快速发送笔记到 inBox 的 Chrome 扩展。
 
-![](./images/main.png)
+![](./images/screenshot_main.png)
 
 关于 inBox 笔记，可查看官网：[https://doc.gudong.site/inbox/](https://doc.gudong.site/inbox/)
 
@@ -58,6 +58,14 @@
 ## 快捷键
 
 - `Ctrl+Enter`（Windows）或 `Command+Enter`（Mac）：快速发送笔记
+
+## 隐私政策
+
+我们重视您的隐私。请查看我们的[隐私政策](privacy.md)，了解我们如何：
+- 收集和使用您的数据
+- 保护您的隐私
+- 存储和处理信息
+- 保障您的权利
 
 ## 注意事项
 
