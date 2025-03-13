@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>inBox 笔记</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 头部 -->
+    <div class="header">
+      <h1>inBox 笔记</h1>
+      <div class="header-actions">
+        <button id="settingsBtn" class="header-btn">设置</button>
+        <button id="aboutBtn" class="header-btn">关于</button>
+      </div>
+    </div>
+
+    <!-- 设置面板 -->
+    <div id="settingsPanel" class="settings-panel">
+      <div class="settings-header">
+        <label for="apiToken">API Token：</label>
+        <a href="#" id="apiHelpBtn" class="api-help-link">查看帮助</a>
+      </div>
+      <input type="text" id="apiToken" class="token-input" placeholder="请输入您的 inBox API Token 或完整的 API URL">
+      <button id="saveSettingsBtn" class="save-btn">保存</button>
+    </div>
+
+    <!-- 消息提示 -->
+    <div id="message" class="message">
+      <span id="messageText"></span>
+    </div>
+
+    <!-- 输入区域 -->
+    <div class="input-area">
+      <input type="text" id="noteTitle" class="title-input" placeholder="标题（可选）">
+      <div class="editor-container">
+        <textarea id="noteContent" class="content-editor" placeholder="正文内容..."></textarea>
+      </div>
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <div class="tool-buttons">
+        <button id="tagBtn" class="tool-btn">标签</button>
+        <button id="todoBtn" class="tool-btn">待办</button>
+        <button id="listBtn" class="tool-btn">无序列表</button>
+        <button id="notesBtn" class="tool-btn">笔记列表</button>
+      </div>
+      <button id="sendBtn" class="send-btn">发送</button>
+    </div>
+    
+    <!-- 标签列表面板 -->
+    <div id="tagsPanel" class="tags-panel">
+      <div class="tags-header">
+        <h2>历史标签</h2>
+        <div class="tags-actions">
+          <button id="clearTagsBtn" class="clear-btn">清空标签</button>
+          <button id="closeTagsBtn" class="close-btn">&times;</button>
+        </div>
+      </div>
+      <div id="tagsList" class="tags-list">
+        <!-- 历史标签会在这里动态展示 -->
+      </div>
+    </div>
+    
+    <!-- 笔记列表面板 -->
+    <div id="notesPanel" class="notes-panel">
+      <div class="notes-header">
+        <h2>历史笔记</h2>
+        <div class="notes-actions">
+          <button id="clearNotesBtn" class="clear-btn">清空记录</button>
+          <button id="closeNotesBtn" class="close-btn">&times;</button>
+        </div>
+      </div>
+      <ul id="notesList" class="notes-list">
+        <!-- 历史笔记会在这里动态展示 -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

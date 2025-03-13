@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "inBox 笔记",
+  "version": "1.0.0",
+  "description": "快速发送笔记到 inBox，支持标签、待办和列表格式",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "host_permissions": [
+    "https://app.gudong.site/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
