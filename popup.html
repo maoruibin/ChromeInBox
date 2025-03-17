@@ -33,7 +33,7 @@
 
     <!-- 输入区域 -->
     <div class="input-area">
-      <input type="text" id="noteTitle" class="title-input" placeholder="标题（可选）">
+      <input type="text" id="noteTitle" class="title-input hidden" placeholder="标题（可选）">
       <div class="editor-container">
         <textarea id="noteContent" class="content-editor" placeholder="正文内容... (Ctrl+Enter 发送)"></textarea>
         <div class="send-status"></div>
@@ -43,6 +43,7 @@
     <!-- 工具栏 -->
     <div class="toolbar">
       <div class="tool-buttons">
+        <button id="titleBtn" class="tool-btn">写标题</button>
         <button id="tagBtn" class="tool-btn">标签</button>
         <button id="todoBtn" class="tool-btn">待办</button>
         <button id="listBtn" class="tool-btn">无序列表</button>

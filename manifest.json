@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "description": "快速发送笔记到 inBox，支持标签、待办和列表格式",
   "permissions": [
-    "storage",
-    "tabs"
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html",

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const saveSettingsBtn = document.getElementById('saveSettingsBtn');
   const noteTitle = document.getElementById('noteTitle');
   const noteContent = document.getElementById('noteContent'); // 原生 textarea
+  const titleBtn = document.getElementById('titleBtn');
   const tagBtn = document.getElementById('tagBtn');
   const todoBtn = document.getElementById('todoBtn');
   const listBtn = document.getElementById('listBtn');
@@ -37,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 加载标签
   loadTags();
+
+  // 加载用户的标题显示偏好
+  loadTitlePreference();
 
   // 设置按钮点击事件
   settingsBtn.addEventListener('click', function() {
@@ -189,6 +193,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // 写标题按钮点击事件
+  titleBtn.addEventListener('click', function() {
+    if (noteTitle.classList.contains('hidden')) {
+      noteTitle.classList.remove('hidden');
+      titleBtn.textContent = '隐藏标题';
+      // 保存用户的选择
+      chrome.storage.sync.set({ 'showTitle': true });
+    } else {
+      noteTitle.classList.add('hidden');
+      titleBtn.textContent = '写标题';
+      // 保存用户的选择
+      chrome.storage.sync.set({ 'showTitle': false });
+    }
+  });
+
   // 加载设置
   function loadSettings() {
     chrome.storage.sync.get('inboxToken', function(result) {
@@ -215,6 +234,20 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.local.get('inboxTags', function(result) {
       if (!result.inboxTags) {
         chrome.storage.local.set({ 'inboxTags': [] });
+      }
+    });
+  }
+
+  // 加载用户的标题显示偏好
+  function loadTitlePreference() {
+    chrome.storage.sync.get('showTitle', function(result) {
+      // 默认为隐藏（如果没有保存过偏好）
+      if (result.showTitle === true) {
+        noteTitle.classList.remove('hidden');
+        titleBtn.textContent = '隐藏标题';
+      } else {
+        noteTitle.classList.add('hidden');
+        titleBtn.textContent = '写标题';
       }
     });
   }
