@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // URL 正则表达式
   const urlRegex = /^https?:\/\/.+/i;
 
+  // 自动聚焦到内容输入框
+  noteContent.focus();
+
   // 加载设置
   loadSettings();
   
