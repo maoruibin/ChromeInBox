@@ -19,7 +19,7 @@
 
 ### 方法一：从 Chrome 网上应用店安装（推荐）
 
-1. 访问 [Chrome 网上应用店](https://chrome.google.com/webstore/detail/inbox-notes/xxx)
+1. 访问 [Chrome 网上应用店](https://chromewebstore.google.com/detail/inbox-%E7%AC%94%E8%AE%B0/icgkklceeijpkpgkmckjmdailmncnifi?authuser=0&hl=en)
 2. 点击"添加至 Chrome"按钮
 3. 在弹出的确认框中点击"添加扩展程序"
 
